@@ -4,13 +4,7 @@ A new Flutter project.
 
 ## Getting Started
 
-This project is a starting point for a Flutter application.
-
-A few resources to get you started if this is your first Flutter project:
-
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
-
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+- [Youtube link part 1](https://www.youtube.com/watch?v=4lmfvNgLlmE&t=360s&ab_channel=dbestech)
+- [Youtube link part 2](https://www.youtube.com/watch?v=RFAfKO51jo8&ab_channel=dbestech)
+- [Documentation part 1](https://www.dbestech.com/tutorials/flutter-firebase-chatting-app)
+- [Documentation part 2](https://www.dbestech.com/tutorials/flutter-video-chat-app)
