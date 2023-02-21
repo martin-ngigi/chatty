@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:firebase_chat/common/values/values.dart';
+import 'package:chatty/common/values/values.dart';
 
 ///  AppBar
 AppBar transparentAppBar({

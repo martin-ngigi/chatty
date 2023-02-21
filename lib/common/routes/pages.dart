@@ -1,6 +1,6 @@
 
 import 'package:flutter/material.dart';
-import 'package:firebase_chat/common/middlewares/middlewares.dart';
+import 'package:chatty/common/middlewares/middlewares.dart';
 
 import 'package:get/get.dart';
 
