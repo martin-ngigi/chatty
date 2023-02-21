@@ -7,7 +7,11 @@ import 'package:get/get.dart';
 // import '../../pages/frame/welcome/bindings.dart';
 // import '../../pages/frame/welcome/view.dart';
 
+import '../../pages/frame/sign_in/bindings.dart';
+import '../../pages/frame/sign_in/view.dart';
 import '../../pages/frame/welcome/index.dart'; // this will import bindings.dart and view.dart
+import '../../pages/message/bindings.dart';
+import '../../pages/message/view.dart';
 import 'routes.dart';
 
 class AppPages {
@@ -26,13 +30,14 @@ class AppPages {
       //   RouteWelcomeMiddleware(priority: 1),
       // ],
     ),
-    /*
+
     GetPage(
       name: AppRoutes.SIGN_IN,
-      page: () => SignInPage(),
+      page: () => const SignInPage(),
       binding: SignInBinding(),
     ),
 
+    /*
     // check if needed to login or not
     GetPage(
       name: AppRoutes.Application,
@@ -46,9 +51,12 @@ class AppPages {
     // 最新路由
     // 首页
     GetPage(name: AppRoutes.Contact, page: () => ContactPage(), binding: ContactBinding()),
-    //消息
-    GetPage(name: AppRoutes.Message, page: () => MessagePage(), binding: MessageBinding()),
-    //我的
+    */
+    // Message
+    GetPage(name: AppRoutes.Message, page: () => const MessagePage(), binding: MessageBinding(), middlewares: [
+      RouteAuthMiddleware(priority: 1),
+    ],),
+    /*//我的
     GetPage(name: AppRoutes.Me, page: () => MePage(), binding: MeBinding()),
     //聊天详情
     GetPage(name: AppRoutes.Chat, page: () => ChatPage(), binding: ChatBinding()),
