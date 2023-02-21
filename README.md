@@ -18,3 +18,22 @@ flutter pub get
 ```
 flutter run -d chrome
 ```
+# SHA-1 Generation for android
+1. For viewing the SHA-1 key from the keystore file that is in flutter project directory:
+```
+ keytool -list -v -keystore C:\Users\Administrator\AndroidStudioProjects\chatty\debug.keystore -alias androiddebugkey -storepass android -keypass android
+```
+2.1 But if there is no keystore file, SHA-1 can be created using following way:
+```
+keytool -genkey -v -keystore debug.keystore -alias androiddebugkey -storepass android -keypass android -keyalg RSA -keysize 2048 -validity 10000
+```
+2.2 For viewing the SHA-1 key from the keystore file that we created
+```
+  keytool -list -v -keystore %USERPROFILE%\.android\debug.keystore -alias androiddebugkey -storepass android -keypass android
+```
+
+# Obtaining package name in iOS:
+- In iOS the package name is the bundle identifier in Info.plist. which is found in Runner.xcodeproj/project.pbxproj
+```
+PRODUCT_BUNDLE_IDENTIFIER = com.example.chatty;
+```

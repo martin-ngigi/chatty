@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>CLIENT_ID</key>
+	<string>453459214094-t8l05km0sef60e26fjr3tngnjlhbrek5.apps.googleusercontent.com</string>
+	<key>REVERSED_CLIENT_ID</key>
+	<string>com.googleusercontent.apps.453459214094-t8l05km0sef60e26fjr3tngnjlhbrek5</string>
+	<key>ANDROID_CLIENT_ID</key>
+	<string>453459214094-kliv32vumakak570avgvlltaskeujsh5.apps.googleusercontent.com</string>
+	<key>API_KEY</key>
+	<string>AIzaSyCXVDmsd2iED45vFXg-WOgyaSIkkxm08zw</string>
+	<key>GCM_SENDER_ID</key>
+	<string>453459214094</string>
+	<key>PLIST_VERSION</key>
+	<string>1</string>
+	<key>BUNDLE_ID</key>
+	<string>com.example.chatty</string>
+	<key>PROJECT_ID</key>
+	<string>chatty-d292f</string>
+	<key>STORAGE_BUCKET</key>
+	<string>chatty-d292f.appspot.com</string>
+	<key>IS_ADS_ENABLED</key>
+	<false></false>
+	<key>IS_ANALYTICS_ENABLED</key>
+	<false></false>
+	<key>IS_APPINVITE_ENABLED</key>
+	<true></true>
+	<key>IS_GCM_ENABLED</key>
+	<true></true>
+	<key>IS_SIGNIN_ENABLED</key>
+	<true></true>
+	<key>GOOGLE_APP_ID</key>
+	<string>1:453459214094:ios:fa27ec72dce07e2cfce15f</string>
+</dict>
+</plist>
