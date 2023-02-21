@@ -13,3 +13,7 @@ A new Flutter project.
 ```
 flutter pub get
 ```
+- Run web app:
+```
+flutter run -d chrome
+```

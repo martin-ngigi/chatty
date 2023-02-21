@@ -4,24 +4,29 @@ import 'package:chatty/common/middlewares/middlewares.dart';
 
 import 'package:get/get.dart';
 
+// import '../../pages/frame/welcome/bindings.dart';
+// import '../../pages/frame/welcome/view.dart';
+
+import '../../pages/frame/welcome/index.dart'; // this will import bindings.dart and view.dart
 import 'routes.dart';
 
 class AppPages {
   static const INITIAL = AppRoutes.INITIAL;
-  static const APPlication = AppRoutes.Application;
+  //static const APPlication = AppRoutes.Application;
   static final RouteObserver<Route> observer = RouteObservers();
   static List<String> history = [];
 
   static final List<GetPage> routes = [
-   /*
+    //about boot up the page
     GetPage(
       name: AppRoutes.INITIAL,
-      page: () => WelcomePage(),
+      page: () => const WelcomePage(),
       binding: WelcomeBinding(),
-      middlewares: [
-        RouteWelcomeMiddleware(priority: 1),
-      ],
+      // middlewares: [
+      //   RouteWelcomeMiddleware(priority: 1),
+      // ],
     ),
+    /*
     GetPage(
       name: AppRoutes.SIGN_IN,
       page: () => SignInPage(),
