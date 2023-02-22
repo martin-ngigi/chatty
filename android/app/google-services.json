@@ -7,22 +7,22 @@
   "client": [
     {
       "client_info": {
-        "mobilesdk_app_id": "1:453459214094:android:d20e1915d23b773dfce15f",
+        "mobilesdk_app_id": "1:453459214094:android:dbc1b8e89680af3ffce15f",
         "android_client_info": {
           "package_name": "com.example.chatty"
         }
       },
       "oauth_client": [
         {
-          "client_id": "453459214094-kliv32vumakak570avgvlltaskeujsh5.apps.googleusercontent.com",
+          "client_id": "453459214094-4c329pfivdni02oe82ej1a82hdug6mj2.apps.googleusercontent.com",
           "client_type": 1,
           "android_info": {
             "package_name": "com.example.chatty",
-            "certificate_hash": "50ffe18fd0d98ccca57f89fa406fb692dfc3d62b"
+            "certificate_hash": "d3a6b9c830690bded732f257aa7ec0bfd51ee27a"
           }
         },
         {
-          "client_id": "453459214094-fqpmetinkdk86535dsfb1b1cajt9hfdi.apps.googleusercontent.com",
+          "client_id": "453459214094-48m1lcgil32hfp4tq2jlv470p8c4jd1h.apps.googleusercontent.com",
           "client_type": 3
         }
       ],
@@ -35,8 +35,15 @@
         "appinvite_service": {
           "other_platform_oauth_client": [
             {
-              "client_id": "453459214094-fqpmetinkdk86535dsfb1b1cajt9hfdi.apps.googleusercontent.com",
+              "client_id": "453459214094-48m1lcgil32hfp4tq2jlv470p8c4jd1h.apps.googleusercontent.com",
               "client_type": 3
+            },
+            {
+              "client_id": "453459214094-t8l05km0sef60e26fjr3tngnjlhbrek5.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "com.example.chatty"
+              }
             }
           ]
         }

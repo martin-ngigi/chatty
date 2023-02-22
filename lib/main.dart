@@ -4,6 +4,7 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:get/get.dart';
 import 'package:flutter/foundation.dart';
 import 'package:firebase_core/firebase_core.dart';
+import 'package:chatty/firebase_options.dart';
 
 import 'common/utils/constants.dart';
 import 'global.dart';
@@ -11,6 +12,7 @@ import 'global.dart';
 Future<void> main() async {
   await Global.init();
 
+  /**
   //Firebase Initialization
   WidgetsFlutterBinding.ensureInitialized();
   //condition to check the where the plaltform the app is running in i.e. android, web, iOS
@@ -25,8 +27,11 @@ Future<void> main() async {
   }
   else{
     //run initialization for iOS and android
-    await Firebase.initializeApp();
+    await Firebase.initializeApp(
+      options: DefaultFirebaseOptions.currentPlatform
+      );
   }
+      **/
 
   runApp(const MyApp());
 }

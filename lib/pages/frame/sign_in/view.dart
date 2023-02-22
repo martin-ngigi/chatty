@@ -7,7 +7,9 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
-class SignInPage extends GetView<WelcomeController> {
+import 'controller.dart';
+
+class SignInPage extends GetView<SignInController> {
   const SignInPage({Key? key}) : super(key: key);
 
   Widget _buildLogo(){
@@ -66,7 +68,8 @@ class SignInPage extends GetView<WelcomeController> {
         ),
       ),
       onTap: (){
-        print("SignUp from third party");
+        //print("SignUp from third party");
+        controller.handleSignIng("google");
       },
     );
   }

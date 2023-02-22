@@ -78,6 +78,55 @@ class UserLoginResponseEntity {
       };
 }
 
+// LoginRequestEntity
+class LoginRequestEntity {
+  int? type;
+  String? name;
+  String? description;
+  String? email;
+  String? phone;
+  String? avatar;
+  String? open_id;
+  int? online;
+
+
+
+  LoginRequestEntity({
+    this.type,
+    this.name,
+    this.description,
+    this.email,
+    this.phone,
+    this.avatar,
+    this.open_id,
+    this.online,
+
+  });
+
+  factory LoginRequestEntity.fromJson(Map<String, dynamic> json) =>
+      LoginRequestEntity(
+        type: json["type"],
+        name: json["name"],
+        description: json["description"],
+        email: json["email"],
+        phone: json["phone"],
+        avatar: json["avatar"],
+        open_id: json["open_id"],
+        online: json["online"],
+      );
+
+  Map<String, dynamic> toJson() => {
+    "type": type,
+    "name": name,
+    "description": description,
+    "email": email,
+    "phone": phone,
+    "avatar": avatar,
+    "open_id": open_id,
+    "online": online,
+  };
+}
+
 //UserItem
 //class login result
 class UserItem {

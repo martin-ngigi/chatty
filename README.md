@@ -18,7 +18,19 @@ flutter pub get
 ```
 flutter run -d chrome
 ```
-# SHA-1 Generation for android
+
+# SHA-1 Generation for android Method 1 (NB: MOST RECOMMENDED WAY)
+1. Right click on 'gradlew' and go to 'Open in Terminal' This file is found under {{YOUR PROJECT}}/android/gradlew
+2. Type in the following command.
+```
+gradlew signingReport
+```
+- or If did not work first try second command(on windows):
+```
+./gradlew signingReport
+```
+
+# SHA-1 Generation for android Method 2 ((NB: NOT RECOMMENDED))
 1. For viewing the SHA-1 key from the keystore file that is in flutter project directory:
 ```
  keytool -list -v -keystore C:\Users\Administrator\AndroidStudioProjects\chatty\debug.keystore -alias androiddebugkey -storepass android -keypass android
@@ -37,3 +49,35 @@ keytool -genkey -v -keystore debug.keystore -alias androiddebugkey -storepass an
 ```
 PRODUCT_BUNDLE_IDENTIFIER = com.example.chatty;
 ```
+
+## Local firebase configuration(This will register our applications to firebase and automatically add json files ;-)
+- Add firebase .exe
+- Add C:\Users\<username>\AppData\Local\Pub\Cache\bin to Environment Path.
+- Executed command:
+```
+dart pub global activate flutterfire_cli
+```
+- login to firebase:
+```
+firebase login
+```
+- configure flutter 
+```
+flutterfire configure
+```
+- or
+```
+flutterfire.bat configure
+```
+### Sample screenshot for fireabse configration
+- [fireabse configration](/assets/images/flutter_configure.png)
+
+## enable Firebase In-App Messaging API
+- [Firebase In-App Messaging API](https://console.cloud.google.com/marketplace/product/google/firebaseinappmessaging.googleapis.com)
+- Project URL -> https://console.developers.google.com/apis/api/firebaseinappmessaging.googleapis.com/overview?project=453459214094
+- Inside project directory, run following command to clean and get:
+```
+flutter clean
+flutter pub get
+```
+
