@@ -1,5 +1,6 @@
 import 'dart:developer';
 
+import 'package:chatty/common/routes/names.dart';
 import 'package:chatty/pages/frame/sign_in/state.dart';
 import 'package:flutter/foundation.dart';
 import 'package:get/get.dart';
@@ -42,6 +43,7 @@ class SignInController extends GetxController{
           loginPanelListRequestEntity.email = email;
           loginPanelListRequestEntity.open_id = id;
           loginPanelListRequestEntity.type = 2; // 2 is google
+          asyncPostAllData();
 
           //print
           print("SUCCESS... LOGIN SUCCESS.... \n Email : $email \n Display Name: $displayName");
@@ -55,5 +57,10 @@ class SignInController extends GetxController{
         log("ERROR... Error with login: $e");
       }
     }
+  }
+
+  asyncPostAllData(){
+    print("Lets go to message page");
+    Get.offAllNamed(AppRoutes.Message);
   }
 }

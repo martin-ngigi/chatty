@@ -12,6 +12,8 @@ import '../../pages/frame/sign_in/view.dart';
 import '../../pages/frame/welcome/index.dart'; // this will import bindings.dart and view.dart
 import '../../pages/message/bindings.dart';
 import '../../pages/message/view.dart';
+import '../../pages/profile/bindings.dart';
+import '../../pages/profile/index.dart';
 import 'routes.dart';
 
 class AppPages {
@@ -56,6 +58,12 @@ class AppPages {
     GetPage(name: AppRoutes.Message, page: () => const MessagePage(), binding: MessageBinding(), middlewares: [
       RouteAuthMiddleware(priority: 1),
     ],),
+
+    //profile
+    GetPage(name: AppRoutes.Profile,
+        page: () => const ProfilePage(),
+        binding: ProfileBinding()),
+
     /*//我的
     GetPage(name: AppRoutes.Me, page: () => MePage(), binding: MeBinding()),
     //聊天详情

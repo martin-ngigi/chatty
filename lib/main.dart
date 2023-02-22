@@ -6,6 +6,7 @@ import 'package:flutter/foundation.dart';
 import 'package:firebase_core/firebase_core.dart';
 import 'package:chatty/firebase_options.dart';
 
+import 'common/style/theme.dart';
 import 'common/utils/constants.dart';
 import 'global.dart';
 
@@ -48,9 +49,7 @@ class MyApp extends StatelessWidget {
         builder: (context, child) => GetMaterialApp(
           debugShowCheckedModeBanner: false,
           title: 'Flutter Demo',
-          theme: ThemeData(
-            primarySwatch: Colors.blue,
-          ),
+          theme: AppTheme.light,
           initialRoute: AppPages.INITIAL,
           getPages: AppPages.routes,
     ));

@@ -7,5 +7,8 @@ class MessageController extends GetxController{
   MessageController();
   final state = MessageState(); //get the variable
 
+  void goProfile() async{
+    await Get.toNamed(AppRoutes.Profile);
+  }
 
 }

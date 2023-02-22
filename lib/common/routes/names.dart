@@ -15,4 +15,6 @@ class AppRoutes {
 
   static const Photoimgview = '/photoimgview';
 
+  static const Profile = '/profile';
+
 }
