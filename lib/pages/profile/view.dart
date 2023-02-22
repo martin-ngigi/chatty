@@ -109,7 +109,7 @@ class ProfilePage extends GetView<ProfileController> {
       child: Container(
         width: 295.w,
         height: 44.h,
-        margin: EdgeInsets.only(top: 60.h, bottom: 30.h),
+        margin: EdgeInsets.only(top: 0.h, bottom: 30.h),
         decoration: BoxDecoration(
           color: AppColors.primarySecondaryElementText,
           borderRadius: BorderRadius.all(Radius.circular(5.w)),
@@ -142,7 +142,7 @@ class ProfilePage extends GetView<ProfileController> {
           title: "Are you sure to logout ?",
           content: Container(),
           onConfirm: (){
-            print("---its confirmed....");
+            controller.goLogout();
           },
           onCancel: (){},
           textConfirm: "Confirm",
