@@ -81,3 +81,9 @@ flutter clean
 flutter pub get
 ```
 
+## Web login
+- flutter doc -> https://pub.dev/packages/google_sign_in_web
+- to run web app :
+```
+flutter run -d chrome --web-hostname localhost --web-port 7357
+```
