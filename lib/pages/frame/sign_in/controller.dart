@@ -5,11 +5,14 @@ import 'package:chatty/common/apis/user.dart';
 import 'package:chatty/common/routes/names.dart';
 import 'package:chatty/common/store/store.dart';
 import 'package:chatty/common/utils/http.dart';
+import 'package:chatty/common/widgets/toast.dart';
 import 'package:chatty/pages/frame/sign_in/state.dart';
 import 'package:flutter/foundation.dart';
+import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:google_sign_in/google_sign_in.dart';
 import 'package:dio/dio.dart';
+import 'package:flutter_easyloading/flutter_easyloading.dart';
 
 import '../../../common/entities/user.dart';
 
@@ -88,8 +91,21 @@ class SignInController extends GetxController{
 
     */
     // first save in the database. Second save in the local storage
-    await UserAPI.Login(params: loginRequestEntity);
-    log("API DATA I am here");
+    EasyLoading.show(
+      indicator: const CircularProgressIndicator(),
+      maskType: EasyLoadingMaskType.clear, dismissOnTap: true
+    );
+    var result = await UserAPI.Login(params: loginRequestEntity);
+    print("DATAAAAAAA.......");
+    print("DATA ->>>>>> ${result.data!}");
+    if(result.code == 0){
+      await UserStore.to.saveProfile(result.data!);
+      EasyLoading.dismiss();
+    }
+    else{
+      EasyLoading.dismiss();
+      toastInfo(msg: "Internet error");
+    }
 
     Get.offAllNamed(AppRoutes.Message);
   }

@@ -5,6 +5,7 @@ import 'package:get/get.dart';
 import 'package:flutter/foundation.dart';
 import 'package:firebase_core/firebase_core.dart';
 import 'package:chatty/firebase_options.dart';
+import 'package:flutter_easyloading/flutter_easyloading.dart';
 
 import 'common/style/theme.dart';
 import 'common/utils/constants.dart';
@@ -52,6 +53,7 @@ class MyApp extends StatelessWidget {
           theme: AppTheme.light,
           initialRoute: AppPages.INITIAL,
           getPages: AppPages.routes,
+          builder: EasyLoading.init(),
     ));
   }
 }

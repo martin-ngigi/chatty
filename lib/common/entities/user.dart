@@ -48,22 +48,49 @@ class UserData {
   }
 }
 
-// 登录返回
+//API Post response message
 class UserLoginResponseEntity {
+  int? code;
+  String? msg;
+  UserItem? data;
+
+
+  UserLoginResponseEntity({
+    this.code,
+    this.msg,
+    this.data
+  });
+
+  factory UserLoginResponseEntity.fromJson(Map<String, dynamic> json) =>
+      UserLoginResponseEntity(
+        code: json["code"],
+        msg: json["msg"],
+        data: UserItem.fromJson(json["data"]),
+      );
+
+  Map<String, dynamic> toJson() => {
+    "code": code,
+    "msg": msg,
+    "data": data,
+  };
+}
+
+/**
+class UserLoginResponseEntity_2 {
   String? accessToken;
   String? displayName;
   String? email;
   String? photoUrl;
 
-  UserLoginResponseEntity({
+  UserLoginResponseEntity_2({
     this.accessToken,
     this.displayName,
     this.email,
     this.photoUrl,
   });
 
-  factory UserLoginResponseEntity.fromJson(Map<String, dynamic> json) =>
-      UserLoginResponseEntity(
+  factory UserLoginResponseEntity_2.fromJson(Map<String, dynamic> json) =>
+      UserLoginResponseEntity_2(
         accessToken: json["access_token"],
         displayName: json["display_name"],
         email: json["email"],
@@ -77,6 +104,7 @@ class UserLoginResponseEntity {
         "photoUrl": photoUrl,
       };
 }
+*/
 
 // LoginRequestEntity
 class LoginRequestEntity {
