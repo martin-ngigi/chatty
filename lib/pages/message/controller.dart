@@ -11,4 +11,8 @@ class MessageController extends GetxController{
     await Get.toNamed(AppRoutes.Profile);
   }
 
+  void goContact() async{
+    await Get.toNamed(AppRoutes.Contact);
+  }
+
 }

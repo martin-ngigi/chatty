@@ -14,6 +14,7 @@ import '../../pages/message/bindings.dart';
 import '../../pages/message/view.dart';
 import '../../pages/profile/bindings.dart';
 import '../../pages/profile/index.dart';
+import '../../pages/contact/index.dart';
 import 'routes.dart';
 
 class AppPages {
@@ -50,10 +51,9 @@ class AppPages {
       ],
     ),
 
-    // 最新路由
-    // 首页
-    GetPage(name: AppRoutes.Contact, page: () => ContactPage(), binding: ContactBinding()),
     */
+    GetPage(name: AppRoutes.Contact, page: () => ContactPage(), binding: ContactBinding()),
+
     // Message
     GetPage(name: AppRoutes.Message, page: () => const MessagePage(), binding: MessageBinding(), middlewares: [
       RouteAuthMiddleware(priority: 1),

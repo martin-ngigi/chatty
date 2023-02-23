@@ -1,4 +1,5 @@
 import 'dart:convert';
+import 'dart:developer';
 import 'package:chatty/common/entities/entities.dart';
 import 'package:chatty/common/routes/names.dart';
 import 'package:chatty/common/services/services.dart';
@@ -33,6 +34,8 @@ class UserStore extends GetxController {
     super.onInit();
     token = StorageService.to.getString(STORAGE_USER_TOKEN_KEY);
     var profileOffline = StorageService.to.getString(STORAGE_USER_PROFILE_KEY);
+    print("Offline: $profileOffline");
+    log("Offline: $profileOffline");
     if (profileOffline.isNotEmpty) {
       _isLogin.value = true;
       //_profile(UserLoginResponseEntity.fromJson(jsonDecode(profileOffline)));
