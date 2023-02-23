@@ -1,5 +1,7 @@
+import 'dart:convert';
 import 'dart:developer';
 
+import 'package:chatty/common/apis/user.dart';
 import 'package:chatty/common/routes/names.dart';
 import 'package:chatty/common/store/store.dart';
 import 'package:chatty/common/utils/http.dart';
@@ -46,7 +48,12 @@ class SignInController extends GetxController{
           loginPanelListRequestEntity.email = email;
           loginPanelListRequestEntity.open_id = id;
           loginPanelListRequestEntity.type = 2; // 2 is google
-          asyncPostAllData();
+
+          //logs
+          print(jsonEncode(loginPanelListRequestEntity));
+          log(jsonEncode(loginPanelListRequestEntity));
+
+          asyncPostAllData(loginPanelListRequestEntity);
 
           //print
           print("SUCCESS... LOGIN SUCCESS.... \n Email : $email \n Display Name: $displayName");
@@ -62,7 +69,8 @@ class SignInController extends GetxController{
     }
   }
 
-  asyncPostAllData() async{
+  asyncPostAllData(LoginRequestEntity loginRequestEntity) async{
+    /**
     print("Lets go to message page");
     var response = await HttpUtil().get(
         '/api/index'
@@ -77,6 +85,12 @@ class SignInController extends GetxController{
 
     print(response);
     UserStore.to.setIsLogin=true;
+
+    */
+    // first save in the database. Second save in the local storage
+    await UserAPI.Login(params: loginRequestEntity);
+    log("API DATA I am here");
+
     Get.offAllNamed(AppRoutes.Message);
   }
 }
