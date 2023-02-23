@@ -1,10 +1,13 @@
 import 'dart:developer';
 
 import 'package:chatty/common/routes/names.dart';
+import 'package:chatty/common/store/store.dart';
+import 'package:chatty/common/utils/http.dart';
 import 'package:chatty/pages/frame/sign_in/state.dart';
 import 'package:flutter/foundation.dart';
 import 'package:get/get.dart';
 import 'package:google_sign_in/google_sign_in.dart';
+import 'package:dio/dio.dart';
 
 import '../../../common/entities/user.dart';
 
@@ -59,8 +62,21 @@ class SignInController extends GetxController{
     }
   }
 
-  asyncPostAllData(){
+  asyncPostAllData() async{
     print("Lets go to message page");
+    var response = await HttpUtil().get(
+        '/api/index'
+    );
+
+    //or
+
+    // var response;
+    // var dio = Dio();
+    // response = await dio.get('https://a9ac-105-163-156-253.in.ngrok.io/api/index');
+    // print(response.data.toString());
+
+    print(response);
+    UserStore.to.setIsLogin=true;
     Get.offAllNamed(AppRoutes.Message);
   }
 }

@@ -8,11 +8,11 @@ import 'package:get/get.dart';
 class UserStore extends GetxController {
   static UserStore get to => Get.find();
 
-  //
+  // if logged in or not
   final _isLogin = false.obs;
-  //  token
+  // login  token
   String token = '';
-  //  profile
+  //user  profile
   //final _profile = UserLoginResponseEntity().obs;
   final _profile = UserItem().obs;
 
@@ -20,6 +20,7 @@ class UserStore extends GetxController {
   //UserLoginResponseEntity get profile => _profile.value;
   UserItem get profile => _profile.value;
   bool get hasToken => token.isNotEmpty;
+  set setIsLogin(login)=>_isLogin.value=login;
 
   @override
   void onInit() {

@@ -210,9 +210,7 @@ class HttpUtil {
         bool cacheDisk = false,
       }) async {
     Options requestOptions = options ?? Options();
-    if (requestOptions.extra == null) {
-      requestOptions.extra = Map();
-    }
+    requestOptions.extra ??= Map();
     requestOptions.extra!.addAll({
       "refresh": refresh,
       "noCache": noCache,
