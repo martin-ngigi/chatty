@@ -13,6 +13,8 @@ class AppRoutes {
   //chat
   static const Chat = '/chat';
 
+  static const VoiceCall = '/voicecall';
+
   static const Photoimgview = '/photoimgview';
 
   static const Profile = '/profile';

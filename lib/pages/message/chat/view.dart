@@ -251,7 +251,8 @@ class ChatPage extends GetView<ChatController> {
                           child: Icon(Icons.call,color: Colors.blue,),
                         ),
                         onTap: (){
-
+                          //navigate to audio call
+                          controller.audioCall();
                         },
                       ),
                       GestureDetector(

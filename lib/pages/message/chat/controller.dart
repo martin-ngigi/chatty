@@ -1,3 +1,4 @@
+import 'package:chatty/common/routes/names.dart';
 import 'package:chatty/pages/message/chat/state.dart';
 import 'package:get/get.dart';
 
@@ -9,6 +10,19 @@ class ChatController extends GetxController{
   void goMore(){
     //toggle, i.e. if false, set true and if true, set false
     state.more_status.value = state.more_status.value?false:true;
+  }
+
+  void audioCall(){
+    //change pop up menu
+    state.more_status.value=false;
+    //navigate to Voice call page
+    Get.toNamed(AppRoutes.VoiceCall,
+        //pass data to video call page
+        parameters: {
+          "to_name": state.to_name.value,
+          "to_avatar": state.to_avatar.value,
+        }
+    );
   }
 
   @override

@@ -13,6 +13,7 @@ import '../../pages/frame/welcome/index.dart'; // this will import bindings.dart
 // import '../../pages/message/bindings.dart';
 import '../../pages/message/index.dart';
 import '../../pages/message/chat/index.dart';
+import '../../pages/message/voicecall/index.dart';
 import '../../pages/profile/bindings.dart';
 import '../../pages/profile/index.dart';
 import '../../pages/contact/index.dart';
@@ -67,6 +68,9 @@ class AppPages {
 
     // chat page
     GetPage(name: AppRoutes.Chat, page: () => ChatPage(), binding: ChatBinding()),
+
+    // voice call
+    GetPage(name: AppRoutes.VoiceCall, page: () => VoiceCallPage(), binding: VoiceCallBinding()),
 
     /*//我的
     GetPage(name: AppRoutes.Me, page: () => MePage(), binding: MeBinding()),
