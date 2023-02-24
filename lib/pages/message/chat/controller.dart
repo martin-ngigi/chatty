@@ -6,6 +6,11 @@ class ChatController extends GetxController{
   final state = ChatState(); //get the variable
   late String doc_id;
 
+  void goMore(){
+    //toggle, i.e. if false, set true and if true, set false
+    state.more_status.value = state.more_status.value?false:true;
+  }
+
   @override
   void onInit() {
     // TODO: implement onInit

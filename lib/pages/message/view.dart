@@ -65,16 +65,7 @@ class MessagePage extends GetView<MessageController> {
 
               ],
             ),
-            Container(
-              child: FloatingActionButton(
-                onPressed: (){
-                  controller.goContact();
-                },
-                child: Icon(
-                    Icons.message
-                ),
-              ),
-            ),
+
           ],
         ),
       ),
@@ -95,6 +86,21 @@ class MessagePage extends GetView<MessageController> {
                     title: _headBar(),
                   )
                 ],
+              ),
+              Positioned(
+                bottom: 0.h,
+                  right: 0.h,
+                  child: Container(
+                    padding: EdgeInsets.all(30),
+                    child: FloatingActionButton(
+                      onPressed: (){
+                        controller.goContact();
+                      },
+                      child: Icon(
+                          Icons.message
+                      ),
+                    ),
+                  ),
               )
             ],
           )
