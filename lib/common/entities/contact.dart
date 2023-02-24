@@ -3,42 +3,36 @@
  */
 
 class ContactItem {
-  String? accessToken;
-  String? token;
+  String? token; //other person's token... not you
   String? name;
   String? description;
   String? avatar;
-  String? online;
-  int? type;
+  int? online;
 
   ContactItem(
-      {this.accessToken,
+      {
         this.token,
         this.name,
         this.description,
         this.avatar,
         this.online,
-        this.type});
+      });
 
   ContactItem.fromJson(Map<String, dynamic> json) {
-    accessToken = json['access_token'];
     token = json['token'];
     name = json['name'];
     description = json['description'];
     avatar = json['avatar'];
     online = json['online'];
-    type = json['type'];
   }
 
   Map<String, dynamic> toJson() {
     final Map<String, dynamic> data = new Map<String, dynamic>();
-    data['access_token'] = this.accessToken;
     data['token'] = this.token;
     data['name'] = this.name;
     data['description'] = this.description;
     data['avatar'] = this.avatar;
     data['online'] = this.online;
-    data['type'] = this.type;
     return data;
   }
 }

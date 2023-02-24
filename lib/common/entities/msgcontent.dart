@@ -1,13 +1,13 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
 
 class Msgcontent {
-  final String? uid;
+  final String? token;
   final String? content;
   final String? type;
   final Timestamp? addtime;
 
   Msgcontent({
-    this.uid,
+    this.token,
     this.content,
     this.type,
     this.addtime,
@@ -19,7 +19,7 @@ class Msgcontent {
       ) {
     final data = snapshot.data();
     return Msgcontent(
-      uid: data?['uid'],
+      token: data?['token'],
       content: data?['content'],
       type: data?['type'],
       addtime: data?['addtime'],
@@ -28,7 +28,7 @@ class Msgcontent {
 
   Map<String, dynamic> toFirestore() {
     return {
-      if (uid != null) "uid": uid,
+      if (token != null) "token": token,
       if (content != null) "content": content,
       if (type != null) "type": type,
       if (addtime != null) "addtime": addtime,

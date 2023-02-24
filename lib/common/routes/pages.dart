@@ -10,8 +10,9 @@ import 'package:get/get.dart';
 import '../../pages/frame/sign_in/bindings.dart';
 import '../../pages/frame/sign_in/view.dart';
 import '../../pages/frame/welcome/index.dart'; // this will import bindings.dart and view.dart
-import '../../pages/message/bindings.dart';
-import '../../pages/message/view.dart';
+// import '../../pages/message/bindings.dart';
+import '../../pages/message/index.dart';
+import '../../pages/message/chat/index.dart';
 import '../../pages/profile/bindings.dart';
 import '../../pages/profile/index.dart';
 import '../../pages/contact/index.dart';
@@ -64,10 +65,11 @@ class AppPages {
         page: () => const ProfilePage(),
         binding: ProfileBinding()),
 
+    // chat page
+    GetPage(name: AppRoutes.Chat, page: () => ChatPage(), binding: ChatBinding()),
+
     /*//我的
     GetPage(name: AppRoutes.Me, page: () => MePage(), binding: MeBinding()),
-    //聊天详情
-    GetPage(name: AppRoutes.Chat, page: () => ChatPage(), binding: ChatBinding()),
 
     GetPage(name: AppRoutes.Photoimgview, page: () => PhotoImgViewPage(), binding: PhotoImgViewBinding()),*/
   ];
