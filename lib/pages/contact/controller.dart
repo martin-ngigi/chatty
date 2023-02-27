@@ -93,7 +93,7 @@ class ContactController extends GetxController{
     else{
       print(".... this is an older user ...");
 
-      if(from_messages.docs.first.id.isNotEmpty){
+      if(from_messages.docs.isNotEmpty){
         //navigate to chat page so as to start chatting
         //toNamed <- the back button is enabled
         Get.toNamed("/chat",
@@ -108,7 +108,7 @@ class ContactController extends GetxController{
         );
       }
 
-      if(to_messages.docs.first.id.isNotEmpty){
+      if(to_messages.docs.isNotEmpty){
         //navigate to chat page so as to start chatting
         //toNamed <- the back button is enabled
         Get.toNamed("/chat",

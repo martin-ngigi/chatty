@@ -92,3 +92,7 @@ flutter pub get
 ```
 flutter run -d chrome --web-hostname localhost --web-port 7357
 ```
+
+## Agora
+- [Dashboard](https://dashboard.agora.io/)
+- [APPID](https://console.agora.io/projects)

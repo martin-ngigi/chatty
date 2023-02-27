@@ -58,5 +58,17 @@
             </array>
         </dict>
     </array>
+
+
+    <key>NSCameraUsageDescription</key>
+    <string>Chatty requires Camera Usage</string>
+    <key>NSMicrophoneUsageDescription</key>
+    <string>Chatty requires Microphone Usage</string>
+    <key>NSLocationUsageDescription</key>
+    <string>Chatty requires Location Updates</string>
+    <key>NSPhotoLibraryUsageDescription</key>
+    <string>Chatty requires PhotoLibrary Usage</string>
+    <key>UIApplicationSupportsIndirectInputEvents</key>
+    <true/>
 </dict>
 </plist>

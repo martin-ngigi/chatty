@@ -136,6 +136,12 @@ dev_dependencies:
 
   image_picker: ^0.8.6
 
+  #audio player
+  just_audio: ^0.9.31
+
+  # audio and video call engine.
+  agora_rtc_engine: ^6.1.0
+
   photo_view: ^0.14.0
   # The "flutter_lints" package below contains a set of recommended lints to
   # encourage good coding practices. The lint set provided by the package is

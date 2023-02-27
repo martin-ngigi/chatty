@@ -67,6 +67,7 @@ class VoiceCallPage extends GetView<VoiceCallController> {
                         children: [
                           GestureDetector(
                             child: Container(
+                              padding: EdgeInsets.all(15.w),
                               width: 60.h,
                               height: 60.h,
                               decoration: BoxDecoration(
@@ -100,6 +101,15 @@ class VoiceCallPage extends GetView<VoiceCallController> {
                       Column(
                         children: [
                           GestureDetector(
+                            onTap: (){
+                              /**
+                               * User already joined = true so leaveChannel
+                               * User left  = true so joinChannel()
+                               */
+                              controller.state.isJoined.value
+                                  ? controller.leaveChannel
+                                  : controller.joinChannel;
+                            },
                             child: Container(
                               width: 60.h,
                               height: 60.h,
@@ -145,9 +155,9 @@ class VoiceCallPage extends GetView<VoiceCallController> {
                               ),
                               child: controller.state.enableSpeaker.value?
                               Image.asset(
-                                  "assets/icons/mute.png"
+                                  "assets/icons/a_volume.png"
                               ): Image.asset(
-                                  "assets/icons/mute.png"
+                                  "assets/icons/b_volume.png"
                               ),
                             ),
                           ),
