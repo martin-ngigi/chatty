@@ -27,6 +27,7 @@ flutter run -d chrome
 
 # SHA-1 Generation for android Method 1 (NB: MOST RECOMMENDED WAY)
 1. Right click on 'gradlew' and go to 'Open in Terminal' This file is found under {{YOUR PROJECT}}/android/gradlew
+1.1 Or Change directory to "android" i.e. cd android
 2. Type in the following command.
 ```
 gradlew signingReport
