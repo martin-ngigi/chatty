@@ -12,7 +12,7 @@ A new Flutter project.
 - [Documentation part 1](https://www.dbestech.com/tutorials/flutter-firebase-chatting-app)
 - 
 - [Documentation part 2](https://www.dbestech.com/tutorials/flutter-video-chat-app)
-- [MY LARAVEL API LINK ](https://github.com/martin-ngigi/chatty_api)
+- [MY LARAVEL API LINK ](https://github.com/martin-ngigi/chatty_api) 
 
 
 ## Getting Started
