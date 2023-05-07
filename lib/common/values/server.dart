@@ -2,7 +2,13 @@
 // const SERVER_API_URL = 'https://yapi.baidu.com/mock/41008';
 
 // const SERVER_API_URL = 'https://www.dbestech.com/';
- const SERVER_API_URL = 'https://bf7c-105-163-158-30.in.ngrok.io/';
+
+/// ios simulator
+// const String SERVER_API_URL="http://127.0.0.1:8000/";
+/// android simulator
+const String SERVER_API_URL="http://10.0.2.2:8000/";
+
+// const SERVER_API_URL = '/';
 
 /**
  * Obtain it from https://console.agora.io/projects

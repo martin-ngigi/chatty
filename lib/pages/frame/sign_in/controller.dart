@@ -68,6 +68,7 @@ class SignInController extends GetxController{
       if(kDebugMode){
         print("ERROR... Error with login: $e");
         log("ERROR... Error with login: $e");
+        throw e.toString();
       }
     }
   }

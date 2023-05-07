@@ -11,6 +11,7 @@ class AppColors {
 
   // primary color black
   static const Color primaryText = Color.fromARGB(255, 45, 45, 47);
+  static const Color primaryGrey200 = Color.fromARGB(255, 137, 137, 138);
 
   /// primary color
   static const Color primaryElement = Color.fromARGB(255, 99, 133, 230);

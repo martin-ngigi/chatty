@@ -18,6 +18,7 @@ class VoiceCallPage extends GetView<VoiceCallController> {
         child: Container(
           child: Stack(
             children: [
+              /// duration, name, image
               Positioned(
                 top: 10.h,
                   left: 30.h,
@@ -25,6 +26,7 @@ class VoiceCallPage extends GetView<VoiceCallController> {
                   child: Column(
                     mainAxisAlignment: MainAxisAlignment.spaceAround,
                     children: [
+                      /// time duration text
                       Text(
                         controller.state.callTime.value,
                         style: TextStyle(
@@ -33,16 +35,32 @@ class VoiceCallPage extends GetView<VoiceCallController> {
                           fontWeight: FontWeight.normal,
                         ),
                       ),
+
+                      /// receiver image
                       Container(
-                        width: 100.h,
-                        height: 100.h,
+                        width: 160.h,
+                        height: 160.h,
                         margin: EdgeInsets.only(top: 150.h),
-                        child: Image.network(
-                          controller.state.to_avatar.value
+                        decoration: BoxDecoration(
+                          borderRadius: BorderRadius.circular(30),
+                          border: Border.all(
+                            color: Colors.greenAccent,
+                            width: 3,
+                          ),
+                          image: DecorationImage(
+                              image: NetworkImage(controller.state.to_avatar.value),
+                            fit: BoxFit.fill
+                          ),
                         ),
+                        // child: Image.network(
+                        //   controller.state.to_avatar.value,
+                        //   fit: BoxFit.cover,
+                        // ),
                       ),
+
+                      /// receiver name
                       Container(
-                        margin: EdgeInsets.only(top: 5.h),
+                        margin: EdgeInsets.only(top: 10.h),
                         child: Text(
                           controller.state.to_name.value,
                           style: TextStyle(
@@ -55,19 +73,23 @@ class VoiceCallPage extends GetView<VoiceCallController> {
                     ],
                   ),
               ),
+
+              /// microphone, contact, speaker icons
               Positioned(
                 bottom: 80.h,
                   left: 30.h,
-                  right: 30.w,
+                  right: 30.w, /// this will align elements in a row sequentially one after another.
                   child: Row(
                     mainAxisAlignment: MainAxisAlignment.spaceAround,
                     children: [
-                      //microphone section
+
+                      ///microphone section
                       Column(
                         children: [
+                          /// microphone icon
                           GestureDetector(
                             child: Container(
-                              padding: EdgeInsets.all(15.w),
+                              padding: EdgeInsets.all(12.w),
                               width: 60.h,
                               height: 60.h,
                               decoration: BoxDecoration(
@@ -78,12 +100,15 @@ class VoiceCallPage extends GetView<VoiceCallController> {
                               ),
                               child: controller.state.openMicrophone.value?
                               Image.asset(
-                                  "assets/icons/a_microphone.png"
+                                  "assets/icons/a_microphone.png",
+                                fit: BoxFit.fill,
                               ): Image.asset(
                                   "assets/icons/b_microphone.png"
                               ),
                             ),
                           ),
+
+                          /// microphone text
                           Container(
                             margin: EdgeInsets.only(top: 10.h),
                             child: Text(
@@ -97,7 +122,8 @@ class VoiceCallPage extends GetView<VoiceCallController> {
                           )
                         ],
                       ),
-                      //phone section
+
+                      ///phone section
                       Column(
                         children: [
                           GestureDetector(
@@ -140,18 +166,20 @@ class VoiceCallPage extends GetView<VoiceCallController> {
                           )
                         ],
                       ),
-                      // speaker section
+
+                      /// speaker section
                       Column(
                         children: [
                           GestureDetector(
                             child: Container(
                               width: 60.h,
                               height: 60.h,
+                              padding: EdgeInsets.all(15.w),
                               decoration: BoxDecoration(
                                   borderRadius: BorderRadius.all(Radius.circular(30.w)),
                                   color: controller.state.enableSpeaker.value?
                                   AppColors.primaryElementText:
-                                  AppColors.primaryText
+                                  Colors.white
                               ),
                               child: controller.state.enableSpeaker.value?
                               Image.asset(

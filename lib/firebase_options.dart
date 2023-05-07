@@ -57,7 +57,7 @@ class DefaultFirebaseOptions {
 
   static const FirebaseOptions android = FirebaseOptions(
     apiKey: 'AIzaSyALAqKkknyrLm-Rnkez3jCCEDxU_E3cwDA',
-    appId: '1:453459214094:android:d20e1915d23b773dfce15f',
+    appId: '1:453459214094:android:dbc1b8e89680af3ffce15f',
     messagingSenderId: '453459214094',
     projectId: 'chatty-d292f',
     storageBucket: 'chatty-d292f.appspot.com',
@@ -69,7 +69,7 @@ class DefaultFirebaseOptions {
     messagingSenderId: '453459214094',
     projectId: 'chatty-d292f',
     storageBucket: 'chatty-d292f.appspot.com',
-    androidClientId: '453459214094-kliv32vumakak570avgvlltaskeujsh5.apps.googleusercontent.com',
+    androidClientId: '453459214094-4c329pfivdni02oe82ej1a82hdug6mj2.apps.googleusercontent.com',
     iosClientId: '453459214094-t8l05km0sef60e26fjr3tngnjlhbrek5.apps.googleusercontent.com',
     iosBundleId: 'com.example.chatty',
   );
