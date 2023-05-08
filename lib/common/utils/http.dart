@@ -29,9 +29,9 @@ class HttpUtil {
     MyServer myServer = MyServer();
     // BaseOptions、Options、RequestOptions 都可以配置参数，优先级别依次递增，且可以根据优先级别覆盖参数
     BaseOptions options = new BaseOptions(
-      // 请求基地址,可以包含子路径
-      // baseUrl: SERVER_API_URL,
-      baseUrl: myServer.deviceType()!,
+      /// BASE URL... base_url
+      baseUrl: SERVER_API_URL,
+      // baseUrl: myServer.deviceType()!,
 
       // baseUrl: storage.read(key: STORAGE_KEY_APIURL) ?? SERVICE_API_BASEURL,
       //连接服务器超时时间，单位是毫秒.

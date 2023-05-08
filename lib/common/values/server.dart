@@ -1,9 +1,15 @@
+import 'package:get/get.dart';
+
 // baidu yapi
 // const SERVER_API_URL = 'https://yapi.baidu.com/mock/41008';
 
 // const SERVER_API_URL = 'https://www.dbestech.com/';
 
 import 'package:flutter/foundation.dart';
+
+/// if android 10.0.2.2:8000, else 127.0.0.1:8000
+String SERVER_API_URL= GetPlatform.isAndroid ? "http://10.0.2.2:8000/" : "http://127.0.0.1:8000/";
+
 
 class MyServer{
   static late String? _SERVER_API_URL1="";
@@ -24,11 +30,6 @@ class MyServer{
   }
 
 }
-
-/// android simulator
-// const String SERVER_API_URL="http://10.0.2.2:8000/";
-
-// const SERVER_API_URL = '/';
 
 /**
  * Obtain it from https://console.agora.io/projects
