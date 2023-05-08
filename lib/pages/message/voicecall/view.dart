@@ -139,15 +139,17 @@ class VoiceCallPage extends GetView<VoiceCallController> {
                             child: Container(
                               width: 60.h,
                               height: 60.h,
+                              padding: EdgeInsets.all(12.w),
                               decoration: BoxDecoration(
                                   borderRadius: BorderRadius.all(Radius.circular(30.w)),
                                   color: controller.state.isJoined.value?
-                                  AppColors.primary_bg:
+                                  // AppColors.primary_bg:
+                                  Colors.white:
                                   AppColors.primaryElementStatus
                               ),
                               child: controller.state.isJoined.value?
                               Image.asset(
-                                  "assets/icons/call.png"
+                                  "assets/icons/end_call.png"
                               ): Image.asset(
                                   "assets/icons/a_call.png"
                               ),

@@ -38,7 +38,7 @@ class VoiceCallController extends GetxController{
   
   Future<void> initEngine() async{
      ////////////////////////NOT EXISITING IN SPECIFIED DIRECTORY
-     await player.setAsset("assets/Sound_Horizon.mp3");
+     await player.setAsset("assets/ringtones/ringtone1.mp3");
 
      engine = createAgoraRtcEngine();
      await engine.initialize(RtcEngineContext(
@@ -61,9 +61,10 @@ class VoiceCallController extends GetxController{
         state.isJoined.value = true;
       },
         /**
-         * after user has joined, stop playing the audio
+         * after remote user has joined, stop playing the audio
          */
       onUserJoined: (RtcConnection connection, int remoteUid, int elapsed) async {
+        print('......onUserJoined , remote user joined ${connection.toJson()}');
         await player.pause();
       },
         /**
@@ -79,7 +80,7 @@ class VoiceCallController extends GetxController{
          */
         onRtcStats: (RtcConnection connection, RtcStats stats){
         print("Time ...");
-        print(stats.duration);
+        print("Duration is : ${stats.duration}");
       }
     ));
 
@@ -116,8 +117,8 @@ class VoiceCallController extends GetxController{
        * NB: token will expire after 24 hours
        * Generated from "Temp token for audio/video call"
        */
-        token: "007eJxTYBDMTC8pP51vr7fxeJuL2M7C25pHnrB9Cnn+sa3J1LPspZICg0FSmnmySVpKkpmpgYmxhUmSpYWZpbm5saVZorFJcpLJrId/khsCGRlOtX5lZWSAQBCfn6E8MTMPhHSTMxJLSioZGAD/liVc",
-        channelId: "wainaina-chatty",
+        token: "007eJxTYAhxzlBKc8gvvb0ww+ilnRFn6pUQy6dRpwOMU3yvcB5+mK7AYJCUZp5skpaSZGZqYGJsYZJkaWFmaW5ubGmWaGySnGSy6UZESkMgI8Od+6eZGBkgEMTnYkjOSCwpqdRNLChgYAAAmvQhPg==",
+        channelId: "chatty-app",
         uid: 0,
         options: ChannelMediaOptions(
           channelProfile: channelProfileType,
