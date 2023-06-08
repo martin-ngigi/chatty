@@ -117,8 +117,9 @@ class VoiceCallController extends GetxController{
        * NB: token will expire after 24 hours
        * Generated from "Temp token for audio/video call"
        */
-        token: "007eJxTYAhxzlBKc8gvvb0ww+ilnRFn6pUQy6dRpwOMU3yvcB5+mK7AYJCUZp5skpaSZGZqYGJsYZJkaWFmaW5ubGmWaGySnGSy6UZESkMgI8Od+6eZGBkgEMTnYkjOSCwpqdRNLChgYAAAmvQhPg==",
-        channelId: "chatty-app",
+        token:
+            "007eJxTYIjad/ZzRWHWAYPWhX0bEji/NCQdyjsedu6/YMmD2/OYPM0VGAyS0syTTdJSksxMDUyMLUySLC3MLM3NjS3NEo1NkpNMXPfWpDQEMjLwssowMEIhiM/GUJJaXBJvyMAAAPOgH/o=",
+        channelId: "test_1",
         uid: 0,
         options: ChannelMediaOptions(
           channelProfile: channelProfileType,

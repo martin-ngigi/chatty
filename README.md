@@ -98,3 +98,22 @@ flutter run -d chrome --web-hostname localhost --web-port 7357
 ## Agora
 - [Dashboard](https://dashboard.agora.io/)
 - [APPID](https://console.agora.io/projects)
+
+## Reducing flutter app size:
+- Run following commands:
+```
+flutter clean
+flutter build apk --target-platform android-arm,android-arm64
+```
+
+# To solve error pod install error
+- Unable to find a target named `RunnerTests` in project `Runner.xcodeproj`
+- SOLUTION:  In the ios/Podfile, comment the use of that reference in the same file as follows:
+```
+  flutter_install_all_macos_pods File.dirname(File.realpath(__FILE__))
+#   target 'RunnerTests' do
+#     inherit! :search_paths
+#   end
+end
+```
+- [Stackoverflow link:](https://stackoverflow.com/questions/76247185/unable-to-find-a-target-named-runnertests-in-project-runner-xcodeproj)

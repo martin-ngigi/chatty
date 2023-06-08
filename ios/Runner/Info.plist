@@ -2,6 +2,8 @@
 <!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
 <plist version="1.0">
 <dict>
+	<key>CADisableMinimumFrameDurationOnPhone</key>
+	<true/>
 	<key>CFBundleDevelopmentRegion</key>
 	<string>$(DEVELOPMENT_LANGUAGE)</string>
 	<key>CFBundleDisplayName</key>
@@ -20,9 +22,30 @@
 	<string>$(FLUTTER_BUILD_NAME)</string>
 	<key>CFBundleSignature</key>
 	<string>????</string>
+	<key>CFBundleURLTypes</key>
+	<array>
+		<dict>
+			<key>CFBundleTypeRole</key>
+			<string>Editor</string>
+			<key>CFBundleURLSchemes</key>
+			<array>
+				<string>com.googleusercontent.apps.453459214094-t8l05km0sef60e26fjr3tngnjlhbrek5</string>
+			</array>
+		</dict>
+	</array>
 	<key>CFBundleVersion</key>
 	<string>$(FLUTTER_BUILD_NUMBER)</string>
 	<key>LSRequiresIPhoneOS</key>
+	<true/>
+	<key>NSCameraUsageDescription</key>
+	<string>Chatty requires Camera Usage</string>
+	<key>NSLocationUsageDescription</key>
+	<string>Chatty requires Location Updates</string>
+	<key>NSMicrophoneUsageDescription</key>
+	<string>Chatty requires Microphone Usage</string>
+	<key>NSPhotoLibraryUsageDescription</key>
+	<string>Chatty requires PhotoLibrary Usage</string>
+	<key>UIApplicationSupportsIndirectInputEvents</key>
 	<true/>
 	<key>UILaunchStoryboardName</key>
 	<string>LaunchScreen</string>
@@ -43,32 +66,5 @@
 	</array>
 	<key>UIViewControllerBasedStatusBarAppearance</key>
 	<false/>
-	<key>CADisableMinimumFrameDurationOnPhone</key>
-	<true/>
-	<key>UIApplicationSupportsIndirectInputEvents</key>
-	<true/>
-    <key>CFBundleURLTypes</key>
-    <array>
-        <dict>
-            <key>CFBundleTypeRole</key>
-            <string>Editor</string>
-            <key>CFBundleURLSchemes</key>
-            <array>
-                <string>com.googleusercontent.apps.453459214094-t8l05km0sef60e26fjr3tngnjlhbrek5</string>
-            </array>
-        </dict>
-    </array>
-
-
-    <key>NSCameraUsageDescription</key>
-    <string>Chatty requires Camera Usage</string>
-    <key>NSMicrophoneUsageDescription</key>
-    <string>Chatty requires Microphone Usage</string>
-    <key>NSLocationUsageDescription</key>
-    <string>Chatty requires Location Updates</string>
-    <key>NSPhotoLibraryUsageDescription</key>
-    <string>Chatty requires PhotoLibrary Usage</string>
-    <key>UIApplicationSupportsIndirectInputEvents</key>
-    <true/>
 </dict>
 </plist>
