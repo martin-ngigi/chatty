@@ -118,8 +118,8 @@ class VoiceCallController extends GetxController{
        * Generated from "Temp token for audio/video call"
        */
         token:
-            "007eJxTYIjad/ZzRWHWAYPWhX0bEji/NCQdyjsedu6/YMmD2/OYPM0VGAyS0syTTdJSksxMDUyMLUySLC3MLM3NjS3NEo1NkpNMXPfWpDQEMjLwssowMEIhiM/GUJJaXBJvyMAAAPOgH/o=",
-        channelId: "test_1",
+            "007eJxTYDjZs/3BvAdTP1xViXiVvmmh76Tmjkk7LxlcM1mVmKdRpyOlwGCQlGaebJKWkmRmamBibGGSZGlhZmlubmxplmhskpxkkuzYkdIQyMiwTt+PlZEBAkF8XobkjMSSSl0gmZeXmsPAAAAvqSPS",
+        channelId: "chaty-channel",
         uid: 0,
         options: ChannelMediaOptions(
           channelProfile: channelProfileType,

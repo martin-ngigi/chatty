@@ -147,7 +147,7 @@ class HttpUtil {
               case 405:
                 return ErrorEntity(code: errCode, message: "请求方法被禁止");
               case 500:
-                return ErrorEntity(code: errCode, message: "服务器内部错误");
+                return ErrorEntity(code: errCode, message: "Internal server error occurred...");
               case 502:
                 return ErrorEntity(code: errCode, message: "无效的请求");
               case 503:

@@ -7,18 +7,18 @@
   "client": [
     {
       "client_info": {
-        "mobilesdk_app_id": "1:453459214094:android:dbc1b8e89680af3ffce15f",
+        "mobilesdk_app_id": "1:453459214094:android:d5af406bfdd1d735fce15f",
         "android_client_info": {
           "package_name": "com.example.chatty"
         }
       },
       "oauth_client": [
         {
-          "client_id": "453459214094-l3le5t1hhhqicafsr00gq2puu0p1b7p6.apps.googleusercontent.com",
+          "client_id": "453459214094-23p8og0ue19qekb9mgtqrc8u86p1tq4h.apps.googleusercontent.com",
           "client_type": 1,
           "android_info": {
             "package_name": "com.example.chatty",
-            "certificate_hash": "8a6bbeb594efe90527f389628bdf223f75c9b358"
+            "certificate_hash": "604bbcfdf82a869ef893b0d1610509a056131306"
           }
         },
         {
