@@ -143,7 +143,7 @@ class HttpUtil {
               case 403:
                 return ErrorEntity(code: errCode, message: "服务器拒绝执行");
               case 404:
-                return ErrorEntity(code: errCode, message: "无法连接服务器");
+                return ErrorEntity(code: errCode, message: "Error 404: Can not reach server.");
               case 405:
                 return ErrorEntity(code: errCode, message: "请求方法被禁止");
               case 500:

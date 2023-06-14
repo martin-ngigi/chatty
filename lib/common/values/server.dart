@@ -9,7 +9,7 @@ import 'package:flutter/foundation.dart';
 
 /// if android 10.0.2.2:8000/, else 127.0.0.1:8000/
 // String SERVER_API_URL= GetPlatform.isAndroid ? "http://10.0.2.2:8000/" : "http://127.0.0.1:8000/";
-String SERVER_API_URL = "http://192.168.1.198:8001/";
+String SERVER_API_URL = "http://127.0.0.1:8000/";
 
 class MyServer{
   static late String? _SERVER_API_URL1="";

@@ -18,9 +18,12 @@ class ChatController extends GetxController{
     //navigate to Voice call page
     Get.toNamed(AppRoutes.VoiceCall,
         //pass data to video call page
+        /// "to" is the receiver
         parameters: {
+          "to_token": state.to_token.value,
           "to_name": state.to_name.value,
           "to_avatar": state.to_avatar.value,
+          "call_role": "anchor" /// Host... i.e. The one initiating the call
         }
     );
   }

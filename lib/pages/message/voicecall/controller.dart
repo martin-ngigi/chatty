@@ -5,11 +5,16 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:just_audio/just_audio.dart';
 
+import '../../../common/apis/chat.dart';
+import '../../../common/entities/chat.dart';
 import '../../../common/values/server.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:agora_rtc_engine/agora_rtc_engine.dart';
 import 'package:permission_handler/permission_handler.dart';
 import 'package:flutter_easyloading/flutter_easyloading.dart';
+
+import 'dart:convert';
+import 'package:crypto/crypto.dart';
 
 class VoiceCallController extends GetxController{
   VoiceCallController();
@@ -30,6 +35,7 @@ class VoiceCallController extends GetxController{
     var data = Get.parameters;
     state.to_name.value = data["to_name"]??""; //if empty, place ""
     state.to_avatar.value = data["to_avatar"]??""; //if empty, place ""
+    state.call_role.value = data["call_role"]??"";
 
      print("-----------YOUR NAME ${state.to_name.value }");
 
@@ -95,6 +101,38 @@ class VoiceCallController extends GetxController{
 
     //join the channel
      await joinChannel();
+
+     /// the host makes a call, play a song
+     if(state.call_role == "anchor"){
+       ///send notification to receiver to answer the call
+       await player.play();
+     }
+  }
+
+  Future<String> getToken() async {
+     /// if the person is host or caller
+     if(state.call_role=="anchor"){
+       /// get caller token and encode it ... i.e. Me
+       /// $profile_token is the caller token.
+       /// $to_token is the receiver token.
+       state.channelId.value = md5.convert(utf8.encode("${profile_token}_${state.to_token.value}")).toString();
+     }
+     else{
+       /// get receiver token and encode it
+       /// $to_token is the caller token.
+       /// $profile_token is the receiver token.
+       state.channelId.value = md5.convert(utf8.encode("${state.to_token.value}_${profile_token}")).toString();
+     }
+
+     CallTokenRequestEntity callTokenRequestEntity = CallTokenRequestEntity();
+     callTokenRequestEntity.channel_name = state.channelId.value;
+     print("---------> [VoiceController] channel id: ${state.channelId.value}");
+     var res = await ChatAPI.call_token(params: callTokenRequestEntity );
+     if(res.code == 0){
+       ///success
+       return res.data!;
+     }
+     return "";
   }
 
   //join channel
@@ -108,6 +146,14 @@ class VoiceCallController extends GetxController{
       dismissOnTap: true
     );
 
+    String token =  await getToken(); ///this token comes from our server.
+    if(token.isEmpty){
+      /// end call
+      EasyLoading.dismiss();
+      Get.back();
+      return; /// dont execute beyond this point.
+    }
+
      //connect to the user
      /**
       * token and channelId should be generated dynamically and should be different for each user.
@@ -117,9 +163,8 @@ class VoiceCallController extends GetxController{
        * NB: token will expire after 24 hours
        * Generated from "Temp token for audio/video call"
        */
-        token:
-            "007eJxTYDjZs/3BvAdTP1xViXiVvmmh76Tmjkk7LxlcM1mVmKdRpyOlwGCQlGaebJKWkmRmamBibGGSZGlhZmlubmxplmhskpxkkuzYkdIQyMiwTt+PlZEBAkF8XobkjMSSSl0gmZeXmsPAAAAvqSPS",
-        channelId: "chaty-channel",
+        token: token,
+        channelId: state.channelId.value,
         uid: 0,
         options: ChannelMediaOptions(
           channelProfile: channelProfileType,
