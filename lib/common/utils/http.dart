@@ -125,7 +125,7 @@ class HttpUtil {
       case DioErrorType.sendTimeout:
         return ErrorEntity(code: -1, message: "请求超时");
       case DioErrorType.receiveTimeout:
-        return ErrorEntity(code: -1, message: "响应超时");
+        return ErrorEntity(code: -1, message: "Error: Response timeout");
       case DioErrorType.cancel:
         return ErrorEntity(code: -1, message: "请求取消");
       case DioErrorType.response:

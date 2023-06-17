@@ -54,4 +54,6 @@ class AppColors {
 
   //背景颜色
 
+  static const Color primaryElementBg = Color.fromARGB(255, 238, 121, 99);
+
 }

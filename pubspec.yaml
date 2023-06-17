@@ -147,6 +147,8 @@ dev_dependencies:
 
   # audio and video call engine.
   agora_rtc_engine: ^6.2.0
+  flutter_local_notifications: ^14.1.1
+
 
   photo_view: ^0.14.0
   # The "flutter_lints" package below contains a set of recommended lints to

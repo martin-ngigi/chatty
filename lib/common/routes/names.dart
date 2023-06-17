@@ -1,6 +1,11 @@
 class AppRoutes {
   static const INITIAL = '/';
   static const SIGN_IN = '/sign_in';
+  static const EmailLogin = '/email_login';
+  static const Register = '/register';
+  static const Forgot = '/forgot';
+  static const Phone = '/phone';
+  static const SendCode = '/SendCode';
   static const NotFound = '/not_found';
 
   static const Application = '/application';
@@ -8,15 +13,14 @@ class AppRoutes {
   static const Contact = '/contact';
   // message
   static const Message = '/message';
-  // me
-  static const Me = '/me';
+
+  static const Profile = '/profile';
   //chat
   static const Chat = '/chat';
 
-  static const VoiceCall = '/voicecall';
-
   static const Photoimgview = '/photoimgview';
 
-  static const Profile = '/profile';
+  static const VoiceCall = '/voicecall';
+  static const VideoCall = '/videocall';
 
 }

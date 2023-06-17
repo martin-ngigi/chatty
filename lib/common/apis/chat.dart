@@ -1,3 +1,4 @@
+import 'dart:convert';
 import 'dart:io';
 import 'package:dio/dio.dart';
 import 'package:chatty/common/entities/entities.dart';
@@ -26,6 +27,7 @@ class ChatAPI {
       'api/send_notice',
       queryParameters: params?.toJson(),
     );
+    //print("RESPONSE: $response");
     return BaseResponseEntity.fromJson(response);
   }
 

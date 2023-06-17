@@ -32,6 +32,6 @@ class BindFcmTokenRequestEntity {
   });
 
   Map<String, dynamic> toJson() => {
-    "fcmtoken": fcmtoken,
+    "fcm_token": fcmtoken,
   };
 }

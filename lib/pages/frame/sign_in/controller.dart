@@ -9,6 +9,7 @@ import 'package:chatty/common/widgets/toast.dart';
 import 'package:chatty/pages/frame/sign_in/state.dart';
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 import 'package:get/get.dart';
 import 'package:google_sign_in/google_sign_in.dart';
 import 'package:dio/dio.dart';
@@ -64,13 +65,23 @@ class SignInController extends GetxController{
         }
       }
     }
-    catch(e){
+    on PlatformException catch(e){
+      if (e.code == GoogleSignIn.kNetworkError) {
+        String errorMessage = "A network error (such as timeout, interrupted connection or unreachable host) has occurred.";
+        log("ERROR: GoogleSignIn.kNetworkError... Error with login: $errorMessage");
+      } else {
+        String errorMessage = "Something went wrong.";
+        log("ERROR... Error with login: $errorMessage");
+      }
+    }
+    on Exception catch(e){
       if(kDebugMode){
         print("ERROR... Error with login: $e");
         log("ERROR... Error with login: $e");
         throw e.toString();
       }
     }
+
   }
 
   asyncPostAllData(LoginRequestEntity loginRequestEntity) async{

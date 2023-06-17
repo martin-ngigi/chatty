@@ -95,8 +95,8 @@ class VoiceCallPage extends GetView<VoiceCallController> {
                               decoration: BoxDecoration(
                                 borderRadius: BorderRadius.all(Radius.circular(30.w)),
                                 color: controller.state.openMicrophone.value?
-                                    AppColors.primaryElementText:
-                                    AppColors.primaryText
+                                    AppColors.primaryText:
+                                    AppColors.primaryElementText
                               ),
                               child: controller.state.openMicrophone.value?
                               Image.asset(
@@ -142,12 +142,12 @@ class VoiceCallPage extends GetView<VoiceCallController> {
                                   borderRadius: BorderRadius.all(Radius.circular(30.w)),
                                   color: controller.state.isJoined.value?
                                   // AppColors.primary_bg:
-                                  Colors.white:
-                                  AppColors.primaryElementStatus
+                                  Colors.red:
+                                  Colors.green
                               ),
                               child: controller.state.isJoined.value?
                               Image.asset(
-                                  "assets/icons/end_call.png"
+                                  "assets/icons/a_phone.png" //end call
                               ): Image.asset(
                                   "assets/icons/a_call.png"
                               ),
@@ -178,14 +178,15 @@ class VoiceCallPage extends GetView<VoiceCallController> {
                               decoration: BoxDecoration(
                                   borderRadius: BorderRadius.all(Radius.circular(30.w)),
                                   color: controller.state.enableSpeaker.value?
-                                  AppColors.primaryElementText:
-                                  Colors.white
+                                  AppColors.primaryText:
+                                  AppColors.primaryElementText
                               ),
                               child: controller.state.enableSpeaker.value?
                               Image.asset(
-                                  "assets/icons/a_volume.png"
+                                  // "assets/icons/a_volume.png"
+                                  "assets/icons/ao_trumpet.png"
                               ): Image.asset(
-                                  "assets/icons/b_volume.png"
+                                  "assets/icons/bo_trumpet.png"
                               ),
                             ),
                           ),

@@ -6,10 +6,12 @@ import 'package:flutter/foundation.dart';
 import 'package:firebase_core/firebase_core.dart';
 import 'package:chatty/firebase_options.dart';
 import 'package:flutter_easyloading/flutter_easyloading.dart';
-
+import 'package:firebase_messaging/firebase_messaging.dart';
 import 'common/style/theme.dart';
 import 'common/utils/constants.dart';
+import 'common/utils/firebase_messaging_handler.dart';
 import 'global.dart';
+import 'package:flutter_local_notifications/flutter_local_notifications.dart';
 
 Future<void> main() async {
   await Global.init();
@@ -36,6 +38,27 @@ Future<void> main() async {
       **/
 
   runApp(const MyApp());
+
+  await firebaseChatInit()
+      .whenComplete(() => FirebaseMessagingHandler.config());
+}
+
+Future firebaseChatInit() async{
+  /// handle background tasks
+  FirebaseMessaging.onBackgroundMessage(
+      FirebaseMessagingHandler.firebaseMessagingBackground
+  );
+  if(GetPlatform.isAndroid){
+    /// channel for  video/audio call
+    FirebaseMessagingHandler.flutterLocalNotificationsPlugin
+        .resolvePlatformSpecificImplementation<AndroidFlutterLocalNotificationsPlugin>()!
+        .createNotificationChannel(FirebaseMessagingHandler.channel_call);
+
+    /// channel for messages
+    FirebaseMessagingHandler.flutterLocalNotificationsPlugin
+        .resolvePlatformSpecificImplementation<AndroidFlutterLocalNotificationsPlugin>()!
+        .createNotificationChannel(FirebaseMessagingHandler.channel_message);
+  }
 }
 
 class MyApp extends StatelessWidget {

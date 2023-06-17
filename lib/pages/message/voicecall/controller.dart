@@ -36,6 +36,8 @@ class VoiceCallController extends GetxController{
     state.to_name.value = data["to_name"]??""; //if empty, place ""
     state.to_avatar.value = data["to_avatar"]??""; //if empty, place ""
     state.call_role.value = data["call_role"]??"";
+    state.doc_id.value = data["doc_id"]??"";
+    state.to_token.value = data["to_token"]??"";
 
      print("-----------YOUR NAME ${state.to_name.value }");
 
@@ -105,8 +107,32 @@ class VoiceCallController extends GetxController{
      /// the host makes a call, play a song
      if(state.call_role == "anchor"){
        ///send notification to receiver to answer the call
+       await sendNotification("voice");
+       /// play the song
        await player.play();
      }
+  }
+
+  Future<void> sendNotification(String call_type) async{
+     CallRequestEntity callRequestEntity = CallRequestEntity();
+     callRequestEntity.call_type = call_type;
+     callRequestEntity.to_token = state.to_token.value;
+     callRequestEntity.to_avatar = state.to_avatar.value;
+     callRequestEntity.doc_id = state.doc_id.value;
+     callRequestEntity.to_name = state.to_name.value;
+
+     print(" ${callRequestEntity.toJson()}");
+     print("---------[VoiceCallController] Notification sent successfully. \nOther user's Token: ${state.to_token.value}");
+
+     var res = await ChatAPI.call_notifications(params: callRequestEntity);
+     // print("---------[VoiceCallController] Notification response is: ${res.code}, ${res.msg}, ${res.data} ");
+     if(res.code == 0){
+       print("---------[VoiceCallController] Notification sent successfully.");
+     }
+     else{
+       print("---------[VoiceCallController] Error: could not send notification.");
+     }
+
   }
 
   Future<String> getToken() async {
@@ -127,6 +153,7 @@ class VoiceCallController extends GetxController{
      CallTokenRequestEntity callTokenRequestEntity = CallTokenRequestEntity();
      callTokenRequestEntity.channel_name = state.channelId.value;
      print("---------> [VoiceController] channel id: ${state.channelId.value}");
+     print("---------> [VoiceController] my access token : ${UserStore.to.token}");
      var res = await ChatAPI.call_token(params: callTokenRequestEntity );
      if(res.code == 0){
        ///success
@@ -184,6 +211,7 @@ class VoiceCallController extends GetxController{
      );
 
      await player.pause();
+     await sendNotification("cancel");
      state.isJoined.value = false;
      EasyLoading.dismiss();
      //return to previous page which is chat page

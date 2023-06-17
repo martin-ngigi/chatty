@@ -7,11 +7,11 @@ import 'package:chatty/common/values/values.dart';
 import 'package:get/get.dart';
 
 class UserStore extends GetxController {
-  static UserStore get to => Get.find();
+  static UserStore get to => Get.find(); /// The "to" will enable us to get the rest of the values in this page
 
   // if logged in or not
   final _isLogin = false.obs;
-  // login  token
+  // login  token. This is our access token and send down for authorization.
   String token = '';
   //user  profile
   //final _profile = UserLoginResponseEntity().obs;
