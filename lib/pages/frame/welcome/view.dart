@@ -12,7 +12,7 @@ class WelcomePage extends GetView<WelcomeController> {
   Widget _buildPageHeadTitle(String title){
 
     return Container(
-      margin: EdgeInsets.only(left: 170, top: 350),
+      // margin: EdgeInsets.only(left: 170, top: 350),
       child: Text(
         title,
         style: TextStyle(
@@ -29,11 +29,13 @@ class WelcomePage extends GetView<WelcomeController> {
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: AppColors.primaryElement,
-      body: Container(
-        width: 360.w,
-        height: 780.h,
-        child: _buildPageHeadTitle(
-            controller.title,
+      body: Center(
+        child: Container(
+          // width: 360.w,
+          // height: 780.h,
+          child: _buildPageHeadTitle(
+              controller.title,
+          ),
         ),
       ),
     );

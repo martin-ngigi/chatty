@@ -90,6 +90,8 @@ class ChatPage extends GetView<ChatController> {
                       child: Row(
                         mainAxisAlignment: MainAxisAlignment.spaceBetween,
                         children: [
+
+                          /// for text field and text message
                           Container(
                             width: 270.w,
                             padding: EdgeInsets.only(top: 10.h, bottom: 10.h),
@@ -103,6 +105,7 @@ class ChatPage extends GetView<ChatController> {
                                 Container(
                                   width: 220.w,
                                   child: TextField(
+                                    controller: controller.myInputController,
                                     keyboardType: TextInputType.multiline,
                                     decoration: InputDecoration(
                                         hintText: "Type message here ...",
@@ -143,12 +146,14 @@ class ChatPage extends GetView<ChatController> {
                                     child: Icon(Icons.send),
                                   ),
                                   onTap: (){
-
+                                    controller.sendMessage();
                                   },
                                 )
                               ],
                             ),
                           ),
+
+                          /// view more i.e. file, voice call, video call
                           GestureDetector(
                             child: Container(
                               height: 40.w,
